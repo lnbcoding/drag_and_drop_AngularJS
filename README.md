@@ -3,7 +3,7 @@
 ### Learning Competencies
 
 - Use OO principles and best practices in Javascript
-- Navigate jQueryUI docs to understand how `draggable` and droppable work
+- Navigate jQueryUI docs to understand how `draggable` and `droppable` work
 
 ### Summary
 
