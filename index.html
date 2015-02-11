@@ -10,11 +10,7 @@
       <div class="span6">
         <h2>Store List</h2>
 
-<!--         <ul class="draggable-objects">
-            <li  ng-repeat="obj in draggableObjects" >
-                <div ng-drag="true" ng-drag-data="obj"> {{obj.name + " " + obj.price}} </div>
-            </li>
-        </ul> -->
+
 
 
         <table id="store_list">
@@ -26,8 +22,11 @@
           </thead>
 
 
-            <tr  ng-repeat="obj in draggableObjects" >
-                <td ng-drag="true" ng-drag-data="obj" class="item_name"> {{obj.name+ "  " + obj.price }}</td>
+            <tr ng-repeat="obj in draggableObjects" >
+                <td ng-drag="true" ng-drag-data="obj" class="item_name"> {{obj.name+ "  "}}
+                  <td ng-drag="true" ng-drag-data="obj" class="item_price">{{obj.price}}
+                  </td>
+                </td>
             <!--     <td ng-drag="true" ng-drag-data="obj" class="item_price"> {{obj.price}} </td> -->
             </tr>
 
@@ -67,15 +66,15 @@
         <div class="span6">
           <h2>My Grocery List</h2>
 
-          <table id="grocery_list" ng-drop="true" ng-drop-success="onDropComplete($data,$event)">
+          <table id="grocery_list" ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" >
             <thead>
-              <tr>
+              <tr >
                 <th>Item Name</th>
                 <th>Price</th>
 
-                  <tr ng-repeat="obj in draggableObjects1" >
-                  <td ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.name+ "  " + obj.price }}</td>
-              <!--     <td ng-drag="true" ng-drag-data="obj" class="item_price"> {{obj.price}} </td> -->
+                <tr ng-repeat="obj in droppedObjects1">
+                  <td  ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.name + "     " }}</td>
+                   <td ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.price}}</td>
                 </tr>
               </tr>
             </thead>

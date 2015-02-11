@@ -19,7 +19,7 @@
       controller('MainCtrl', function ($scope) {
         $scope.centerAnchor = true;
         $scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
-        $scope.draggableObjects = [{name:'Apple', price:0.69}, {name:'Tofu', price: 3.49}];
+        $scope.draggableObjects = [{name:'Apple', price:0.69}, {name:'Tofu', price: 3.49}, {name:'Granola', price:4.55}, {name: 'Flatbread', price: 6.21}, {name: 'Zucchini', price: 1.22}, {name: 'Organic Beef', price: 12.99}];
         $scope.droppedObjects1 = [];
         $scope.droppedObjects2= [];
         $scope.onDropComplete1=function(data,evt){
