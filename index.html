@@ -72,9 +72,9 @@
                 <th>Item Name</th>
                 <th>Price</th>
 
-                <tr ng-repeat="obj in droppedObjects1">
-                  <td  ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.name + "     " }}</td>
-                   <td ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.price}}</td>
+                <tr ng-repeat="obj in droppedObjects1 track by $index" >
+                  <td  ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.name + "     "}}</td>
+                  <td ng-drop='true' ng-drop-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}"> {{obj.price}}</td>
                 </tr>
               </tr>
             </thead>
@@ -84,7 +84,7 @@
             <tfoot>
               <tr>
                 <td>TOTAL:</td>
-                <td id="total_cost"></td>
+                <td id="total_cost">{{ getTotal() }}</td>
               </tr>
             </tfoot>
           </table>
